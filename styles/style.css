@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body,
+#menu {
+	width: 100%;
+	max-width: 500px;
+	min-height: 100vh;
+	font-family: 'Open Sans', sans-serif;
+}
+
+button {
+	font: inherit;
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+}
+
+img {
+	width: 60px;
+	display: block;
+	filter: drop-shadow(0px 0px 10px rgba(0 0 0 / 30%));
+}
+
+h3 {
+	font-size: 1rem;
+	text-wrap: nowrap;
+}
+
+.menu-icon {
+	width: 2em;
+	margin: 1rem;
+	cursor: pointer;
+
+	img {
+		width: 100%;
+	}
+}
+
+#menu {
+	border: none;
+	height: 100%;
+
+	h2 {
+		margin-block-end: 1em;
+		font-size: 1.8rem;
+		text-align: center;
+	}
+
+	.all-types {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		gap: 1em;
+		padding-inline: 1em;
+
+		img {
+			width: 60px;
+			cursor: pointer;
+		}
+	}
+}
+
+.type {
+	width: 90%;
+	display: flex;
+	gap: 1em;
+	justify-content: center;
+	align-items: center;
+	margin-block-end: 1em;
+}
+
+.type-relations {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+
+	section {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.6em;
+		min-height: calc(40px + 1rem);
+		padding: 0.5rem;
+		clip-path: shape(
+			from 93% 100%,
+			line to 100% 50%,
+			line to 93% 0,
+			line to 0 0,
+			line to 0 100%,
+			close
+		);
+
+		.icons-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+			gap: 0.5em;
+			padding-inline-end: 1em;
+		}
+	}
+
+	.strong-container,
+	.weak-container {
+		display: flex;
+		align-items: center;
+
+		h3 {
+			writing-mode: vertical-lr;
+			margin-block-end: 0.5rem;
+		}
+	}
+
+	.strong,
+	.weak {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+		width: 100%;
+
+		.category {
+			font-weight: 600;
+			text-align: center;
+			line-height: 1;
+			writing-mode: sideways-lr;
+		}
+	}
+
+	.strong {
+		.double_damage {
+			background-color: hsl(120, 60%, 55%);
+		}
+
+		.no_damage {
+			background-color: hsl(120, 60%, 65%);
+		}
+
+		.half_damage {
+			background-color: hsl(120, 60%, 74%);
+		}
+	}
+
+	.weak {
+		.half_damage {
+			background-color: hsl(3, 60%, 74%);
+		}
+
+		.no_damage {
+			background-color: hsl(3, 60%, 65%);
+		}
+
+		.double_damage {
+			background-color: hsl(3, 60%, 55%);
+		}
+	}
+
+	img {
+		width: 40px;
+	}
+
+	.arrow-container {
+		display: flex;
+		align-items: flex-end;
+		align-self: stretch;
+	}
+
+	.arrow {
+		position: relative;
+		width: 0.2em;
+		margin-inline: 0.5rem;
+		background-color: black;
+		height: 95%;
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			width: 0;
+			height: 0;
+			translate: calc(-50% + 0.1em) 0;
+			border-left: 0.4em solid transparent;
+			border-right: 0.4em solid transparent;
+			font-size: 1.3rem;
+		}
+	}
+
+	.arrow-container:has(.up) {
+		align-items: flex-end;
+
+		.up::after {
+			top: -5%;
+			border-bottom: 1em solid black;
+		}
+	}
+
+	.arrow-container:has(.down) {
+		align-items: flex-start;
+
+		.down::after {
+			bottom: -5%;
+			border-top: 1em solid black;
+		}
+	}
+}
+
+/* .type-relations {
+	display: none;
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	width: 100%;
+	max-width: 500px;
+	position: relative;
+
+	.effectiveness {
+		display: flex;
+		align-self: center;
+		rotate: -90deg;
+		transform-origin: 0 0;
+
+		h3 {
+			position: absolute;
+		}
+	}
+
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+	}
+
+	section {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-inline: 1rem;
+		clip-path: shape(
+			from 93% 100%,
+			line to 100% 50%,
+			line to 93% 0,
+			line to 0 0,
+			line to 0 100%,
+			close
+		);
+
+		.icons-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+		}
+	}
+
+	.double_damage.green {
+		position: relative;
+		background-color: hsl(120, 60%, 55%);
+	}
+
+	.no_damage.green {
+		background-color: hsl(120, 60%, 65%);
+	}
+
+	.half_damage.green {
+		background-color: hsl(120, 60%, 74%);
+	}
+
+	.half_damage.red {
+		background-color: hsl(3, 60%, 74%);
+	}
+
+	.no_damage.red {
+		background-color: hsl(3, 60%, 65%);
+	}
+
+	.double_damage.red {
+		background-color: hsl(3, 60%, 55%);
+	}
+
+	svg {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.category {
+		font-size: 1.1rem;
+		font-weight: 700;
+	}
+
+	.entity {
+		font-size: 1.4rem;
+	}
+
+	img {
+		width: 70px;
+	}
+} */

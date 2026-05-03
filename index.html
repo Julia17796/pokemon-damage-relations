@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Pokémon Damage Relations</title>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="icons/apple-touch-icon.png" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="icons/favicon-32x32.png" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="icons/favicon-16x16.png" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<link rel="stylesheet" href="styles/style.css" />
+		<script src="scripts/index.js" defer></script>
+	</head>
+
+	<body>
+		<button class="menu-icon" popovertarget="menu">
+			<img src="icons/icon-hamburger.svg" alt="open menu" />
+		</button>
+
+		<div id="menu" popover="manual">
+			<button class="menu-icon" popovertarget="menu" popovertargetaction="hide">
+				<img src="icons/icon-close.svg" alt="close menu" />
+			</button>
+
+			<div class="types-container">
+				<h2>Choose a type:</h2>
+				<div class="all-types"></div>
+			</div>
+		</div>
+
+		<div class="type"></div>
+
+		<div class="type-relations">
+			<div class="strong-container">
+				<div class="strong">
+					<section class="double_damage">
+						<div class="category">
+							x2 <br />
+							to
+						</div>
+						<div class="double_damage_to icons-container"></div>
+					</section>
+
+					<section class="no_damage">
+						<div class="entity category">0 <br />from</div>
+						<div class="no_damage_from icons-container"></div>
+					</section>
+
+					<section class="half_damage">
+						<div class="entity category">
+							&frac12; <br />
+							from
+						</div>
+						<div class="half_damage_from icons-container"></div>
+					</section>
+				</div>
+
+				<div class="arrow-container">
+					<div class="arrow up"></div>
+				</div>
+				<h3 class="category">Strong against</h3>
+			</div>
+
+			<div class="weak-container">
+				<div class="weak">
+					<section class="half_damage">
+						<div class="entity category">
+							&frac12; <br />
+							to
+						</div>
+						<div class="half_damage_to icons-container"></div>
+					</section>
+
+					<section class="no_damage">
+						<div class="entity category">
+							0 <br />
+							to
+						</div>
+						<div class="no_damage_to icons-container"></div>
+					</section>
+
+					<section class="double_damage">
+						<div class="category">
+							x2 <br />
+							from
+						</div>
+						<div class="double_damage_from icons-container"></div>
+					</section>
+				</div>
+
+				<div class="arrow-container">
+					<div class="arrow down"></div>
+				</div>
+				<h3 class="category">Weak against</h3>
+			</div>
+		</div>
+
+		<!-- <button class="menu-icon" popovertarget="menu">
+			<img src="icons/icon-hamburger.svg" alt="open menu" />
+		</button>
+
+		<div id="menu" popover="manual">
+			<button class="menu-icon" popovertarget="menu" popovertargetaction="hide">
+				<img src="icons/icon-close.svg" alt="close menu" />
+			</button>
+
+			<div class="all-types">
+				<img src="images/types-icons/electric.png" />
+				<img src="images/types-icons/electric.png" />
+				<img src="images/types-icons/electric.png" />
+				<img src="images/types-icons/electric.png" />
+				<img src="images/types-icons/electric.png" />
+				<img src="images/types-icons/electric.png" />
+				<img src="images/types-icons/electric.png" />
+				<img src="images/types-icons/electric.png" />
+				<img src="images/types-icons/electric.png" />
+				<img src="images/types-icons/electric.png" />
+				<img src="images/types-icons/electric.png" />
+				<img src="images/types-icons/electric.png" />
+				<img src="images/types-icons/electric.png" />
+				<img src="images/types-icons/electric.png" />
+				<img src="images/types-icons/electric.png" />
+				<img src="images/types-icons/electric.png" />
+				<img src="images/types-icons/electric.png" />
+				<img src="images/types-icons/electric.png" />
+			</div>
+		</div>
+
+		<div class="type">
+			<h2>Type:</h2>
+			<img src="images/types-icons/bug.png" />
+		</div>
+
+		<div class="type-relations">
+			<div class="strong-container">
+				<div class="strong">
+					<section class="double_damage">
+						<div class="category">x2</div>
+						<div class="double_damage_to icons-container">
+							<img src="images/types-icons/dragon.png" />
+							<img src="images/types-icons/dragon.png" />
+							<img src="images/types-icons/dragon.png" />
+						</div>
+					</section>
+
+					<section class="no_damage">
+						<div class="entity category">&oslash;</div>
+						<div class="no_damage_from icons-container">
+							<img src="images/types-icons/fighting.png" />
+						</div>
+					</section>
+
+					<section class="half_damage">
+						<div class="entity category">&frac12;</div>
+						<div class="half_damage_from icons-container">
+							<img src="images/types-icons/electric.png" />
+							<img src="images/types-icons/electric.png" />
+							<img src="images/types-icons/electric.png" />
+							<img src="images/types-icons/electric.png" />
+							<img src="images/types-icons/electric.png" />
+							<img src="images/types-icons/electric.png" />
+							<img src="images/types-icons/electric.png" />
+							<img src="images/types-icons/electric.png" />
+							<img src="images/types-icons/electric.png" />
+							<img src="images/types-icons/electric.png" />
+						</div>
+					</section>
+				</div>
+
+				<div class="arrow-container">
+					<div class="arrow up"></div>
+				</div>
+				<h3 class="category">Strong against</h3>
+			</div>
+
+			<div class="weak-container">
+				<div class="weak">
+					<section class="half_damage">
+						<div class="entity category">&frac12;</div>
+						<div class="half_damage_to icons-container">
+							<img src="images/types-icons/fairy.png" />
+							<img src="images/types-icons/fairy.png" />
+							<img src="images/types-icons/fairy.png" />
+							<img src="images/types-icons/fairy.png" />
+						</div>
+					</section>
+
+					<section class="no_damage">
+						<div class="entity category">&oslash;</div>
+						<div class="no_damage_to icons-container">
+							<img src="images/types-icons/fire.png" />
+						</div>
+					</section>
+
+					<section class="double_damage">
+						<div class="category">x2</div>
+						<div class="double_damage_from icons-container">
+							<img src="images/types-icons/dark.png" />
+							<img src="images/types-icons/dark.png" />
+							<img src="images/types-icons/dark.png" />
+						</div>
+					</section>
+				</div>
+
+				<div class="arrow-container">
+					<div class="arrow down"></div>
+				</div>
+				<h3 class="category">Weak against</h3>
+			</div>
+		</div> -->
+	</body>
+</html>
