@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+:root {
+	--font: #e6e0e9;
+	--bg: #1d1b20;
+	--primary: hsl(3, 85%, 57%);
+}
+
 *,
 *::before,
 *::after {
@@ -14,6 +20,9 @@ body,
 	max-width: 500px;
 	min-height: 100vh;
 	font-family: 'Open Sans', sans-serif;
+	color: var(--font);
+	background-color: var(--bg);
+	border: 16px solid var(--primary);
 }
 
 button {
@@ -45,7 +54,7 @@ h3 {
 }
 
 #menu {
-	border: none;
+	border: 16px solid var(--primary);
 	height: 100%;
 
 	h2 {
@@ -130,6 +139,7 @@ h3 {
 			text-align: center;
 			line-height: 1;
 			writing-mode: sideways-lr;
+			color: var(--bg);
 		}
 	}
 
@@ -149,20 +159,20 @@ h3 {
 
 	.weak {
 		.half_damage {
-			background-color: hsl(3, 60%, 74%);
+			background-color: hsl(3, 85%, 76%);
 		}
 
 		.no_damage {
-			background-color: hsl(3, 60%, 65%);
+			background-color: hsl(3, 85%, 67%);
 		}
 
 		.double_damage {
-			background-color: hsl(3, 60%, 55%);
+			background-color: hsl(3, 85%, 57%);
 		}
 	}
 
 	img {
-		width: 40px;
+		width: 35px;
 	}
 
 	.arrow-container {
@@ -175,7 +185,7 @@ h3 {
 		position: relative;
 		width: 0.2em;
 		margin-inline: 0.5rem;
-		background-color: black;
+		background-color: var(--font);
 		height: 95%;
 
 		&::after {
@@ -196,7 +206,7 @@ h3 {
 
 		.up::after {
 			top: -5%;
-			border-bottom: 1em solid black;
+			border-bottom: 1em solid var(--font);
 		}
 	}
 
@@ -205,101 +215,7 @@ h3 {
 
 		.down::after {
 			bottom: -5%;
-			border-top: 1em solid black;
+			border-top: 1em solid var(--font);
 		}
 	}
 }
-
-/* .type-relations {
-	display: none;
-	display: flex;
-	align-items: center;
-	gap: 1em;
-	width: 100%;
-	max-width: 500px;
-	position: relative;
-
-	.effectiveness {
-		display: flex;
-		align-self: center;
-		rotate: -90deg;
-		transform-origin: 0 0;
-
-		h3 {
-			position: absolute;
-		}
-	}
-
-	.wrapper {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5em;
-	}
-
-	section {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding-inline: 1rem;
-		clip-path: shape(
-			from 93% 100%,
-			line to 100% 50%,
-			line to 93% 0,
-			line to 0 0,
-			line to 0 100%,
-			close
-		);
-
-		.icons-container {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: flex-end;
-		}
-	}
-
-	.double_damage.green {
-		position: relative;
-		background-color: hsl(120, 60%, 55%);
-	}
-
-	.no_damage.green {
-		background-color: hsl(120, 60%, 65%);
-	}
-
-	.half_damage.green {
-		background-color: hsl(120, 60%, 74%);
-	}
-
-	.half_damage.red {
-		background-color: hsl(3, 60%, 74%);
-	}
-
-	.no_damage.red {
-		background-color: hsl(3, 60%, 65%);
-	}
-
-	.double_damage.red {
-		background-color: hsl(3, 60%, 55%);
-	}
-
-	svg {
-		position: absolute;
-		right: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-	}
-
-	.category {
-		font-size: 1.1rem;
-		font-weight: 700;
-	}
-
-	.entity {
-		font-size: 1.4rem;
-	}
-
-	img {
-		width: 70px;
-	}
-} */
